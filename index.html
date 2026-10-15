@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoAssist AI | Car Buying & Ownership Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-mark">A</div>
+      <div>
+        <p class="eyebrow">AI PROJECT DEMO</p>
+        <h1>AutoAssist <span>AI</span></h1>
+      </div>
+      <button id="reset" class="reset-btn" type="button">New chat</button>
+    </header>
+
+    <section class="intro">
+      <p class="pill">LLM API · Retrieval · Conversation memory</p>
+      <h2>Make your next car decision<br><em>with more confidence.</em></h2>
+      <p class="intro-copy">Ask about used-car inspections, ownership costs, maintenance, EV basics, and documents to verify.</p>
+    </section>
+
+    <section class="chat-card" aria-label="Chat assistant">
+      <div class="chat-heading">
+        <div class="assistant-avatar">A</div>
+        <div><strong>AutoAssist</strong><small>AI car research assistant</small></div>
+        <span class="online-dot" aria-label="Ready"></span>
+      </div>
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="message assistant">
+          <div class="bubble">Hi! I'm AutoAssist. What would you like to know before buying or maintaining a car?</div>
+        </div>
+      </div>
+      <div class="suggestions">
+        <button type="button" data-prompt="Give me a checklist for inspecting a used car in India.">Used-car checklist</button>
+        <button type="button" data-prompt="What documents should I verify before buying a used car in India?">Documents to verify</button>
+        <button type="button" data-prompt="How should I estimate the total cost of owning a car?">Ownership costs</button>
+      </div>
+      <form id="chat-form" class="composer">
+        <label class="sr-only" for="message-input">Your message</label>
+        <textarea id="message-input" rows="1" maxlength="2000" placeholder="Ask AutoAssist a question…" required></textarea>
+        <button id="send" type="submit" aria-label="Send message">↑</button>
+      </form>
+      <p class="fine-print">Demo project. AI responses can be inaccurate; verify important details with official sources or a qualified professional.</p>
+    </section>
+    <footer>Built with Python · Flask · OpenAI API · Local knowledge retrieval</footer>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
